@@ -1,9 +1,10 @@
-class GrayScale { /* Анимация, - "Цветной зум" */
+class Photo { /* Анимация, - "Цветной зум" */
     constructor(obj) {
         this.glass = document.querySelector(obj.glass);
+        this.block_parent = document.querySelector(obj.block_parent);
+
         this.polygon_rand = obj.polygon_rand;
         this.living_figure = obj.living_figure;
-        this.block_parent = document.querySelector(obj.block_parent);
 
         this.block_parent.addEventListener('mousemove', this.relativeCoords.bind(this));
         this.block_parent.addEventListener('mouseleave', () => (this.glass.classList.contains('opacityShow')) ? this.glass.classList.remove('opacityShow') : '');
