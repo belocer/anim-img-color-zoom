@@ -1,0 +1,227 @@
+/* Анимация, - "Цветной зум" */
+@width_img: 750px;
+@height_img: 600px;
+
+.photo__container1 {
+  background: linear-gradient(90deg, #ec4c4c, #213d6d) center center no-repeat no-repeat;
+  box-shadow: 0 -10px 50px rgba(75, 75, 75, .3);
+  height: 100vh;
+}
+
+.photo__container2 {
+  background: linear-gradient(90deg, #4666b0, #d584b5) center center no-repeat no-repeat;
+  box-shadow: 0 -10px 50px rgba(75, 75, 75, .3);
+  height: 100vh;
+}
+
+.photo__container3 {
+  background: linear-gradient(90deg, #537977, #73678c) center center no-repeat no-repeat;
+  box-shadow: 0 -10px 50px rgba(75, 75, 75, .3);
+  height: 100vh;
+}
+
+.photo__container4 {
+  background: linear-gradient(90deg, #dfc369, #16bbd6) center center no-repeat no-repeat;
+  box-shadow: 0 -10px 50px rgba(75, 75, 75, .3);
+  height: 100vh;
+}
+
+.photo__container5 {
+  background: linear-gradient(90deg, #8ff6f2, #092636) center center no-repeat no-repeat;
+  box-shadow: 0 -10px 50px rgba(75, 75, 75, .3);
+  height: 100vh;
+}
+
+.photo__container6 {
+  background: linear-gradient(90deg, #7c4082, #154ca4f0) center center no-repeat no-repeat;
+  box-shadow: 0 -10px 50px rgba(75, 75, 75, .3);
+  height: 100vh;
+}
+
+.photo {
+  display: block;
+  cursor: none;
+  position: relative;
+  width: @width_img;
+  height: @height_img;
+  max-width: 750px;
+  max-height: 600px;
+  margin: 0 auto;
+  padding-bottom: 100px;
+  padding-top: 100px;
+
+  .sm-block({
+    max-width: 100%;
+  });
+
+
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 80%;
+    height: 30px;
+    background: #292929;
+    position: absolute;
+    transform: rotate(1.6deg);
+    z-index: 0;
+    bottom: 114px;
+    right: 0;
+    box-shadow: -3px 10px 9px #292929;
+  }
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 80%;
+    height: 30px;
+    background: #292929;
+    transform: rotate(-1.6deg);
+    z-index: 0;
+    position: absolute;
+    bottom: 114px;
+    left: 0;
+    box-shadow: 3px 10px 9px #292929;
+  }
+
+  .anim-photo {
+    display: block;
+    margin: 0 auto;
+    width: @width_img;
+    height: @height_img;
+    position: relative;
+    z-index: 16;
+    box-sizing: border-box;
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    object-fit: cover;
+
+    .anim-photo__back {
+      position: absolute;
+      z-index: 14;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      max-width: 100%;
+      pointer-events: none;
+      background-origin: border-box;
+      background-repeat: no-repeat;
+      width: @width_img;
+      overflow: hidden;
+
+      img {
+        pointer-events: none;
+        background-origin: border-box;
+        background-repeat: no-repeat;
+        width: @width_img;
+        min-height: 100%;
+      }
+    }
+  }
+
+  .glass-search1 {
+    transition: clip-path 1s;
+    opacity: 0;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    z-index: 16;
+    background: url(../img/dest/originredblue.jpg) center center no-repeat no-repeat;
+    background-size: @width_img auto;
+    object-fit: cover;
+    //clip-path: polygon(98% 19%, 86% 33%, 98% 61%, 80% 69%, 96% 82%, 80% 99%, 38% 88%, 20% 94%, 0 86%, 15% 74%, 0 66%, 9% 46%, 0 30%, 18% 13%, 10% 4%, 30% 2%, 50% 8%, 62% 1%, 84% 4%);
+    clip-path: polygon(0% 15%, 22% 23%, 15% 0%, 85% 0%, 77% 23%, 100% 15%, 100% 85%, 75% 76%, 85% 100%, 15% 100%, 23% 77%, 0% 85%);
+  }
+
+  .glass-search2 {
+    transition: clip-path 1s;
+    opacity: 0;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    z-index: 16;
+    background: url(../img/dest/backtothe.webp) center center no-repeat no-repeat;
+    background-size: @width_img 600px;
+    object-fit: cover;
+    clip-path: polygon(50% 0%, 69% 23%, 98% 35%, 75% 61%, 79% 91%, 48% 78%, 21% 91%, 20% 60%, 2% 35%, 28% 25%);
+  }
+
+  .glass-search3 {
+    transition: clip-path 1s;
+    opacity: 0;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    z-index: 16;
+    background: url(../img/dest/originsytyhorse.jpg) center center no-repeat no-repeat;
+    background-size: @width_img 600px;
+    clip-path: polygon(24% 14%, 74% 14%, 100% 50%, 74% 88%, 26% 88%, 0% 50%);
+  }
+
+  .glass-search4 {
+    transition: clip-path 1s;
+    opacity: 0;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    z-index: 16;
+    background: url(../img/dest/origincity.jpg) center center no-repeat no-repeat;
+    background-size: @width_img 600px;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  }
+
+  .glass-search5 {
+    transition: clip-path 1s;
+    opacity: 0;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    z-index: 16;
+    background: url(../img/dest/branch_color.webp) center center no-repeat no-repeat;
+    background-size: @width_img 600px;
+    clip-path: polygon(20% 0%, 0% 20%, 15% 49%, 0% 80%, 20% 100%, 48% 91%, 80% 100%, 100% 80%, 83% 50%, 100% 20%, 80% 0%, 49% 13%);
+  }
+
+  .glass-search6 {
+    transition: clip-path 1s;
+    opacity: 0;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    z-index: 16;
+    background: url('../img/dest/star wars.webp') center center no-repeat no-repeat;
+    background-size: @width_img 600px;
+    clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
+  }
+}
+
+.filterGray {
+  filter: brightness(3.5) grayscale(1);
+}
+
+.filterSepia {
+  filter: sepia(100%);
+}
+
+.opacityShow {
+  opacity: 1 !important;
+}
