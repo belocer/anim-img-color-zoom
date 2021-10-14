@@ -1,0 +1,134 @@
+.btn__container {
+  min-height: 100vh;
+  background: var(--dark-blue);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn__wrap {
+  margin: 150px auto;
+
+
+  .btn {
+    text-decoration: none;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, .5);
+    transition: all 1s;
+    position: relative;
+    height: 400%;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
+
+    &:hover {
+
+      &::before {
+        width: 120%;
+      }
+
+      .btn__text {
+        opacity: 1;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 40px;
+      height: 1500px;
+      transition: all 1s;
+      animation: animate 2s linear infinite;
+      animation-delay: calc(0.33s * var(--btn0));
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 4px;
+      background: var(--dark-blue);
+      transition: all .5s;
+    }
+  }
+
+  .btn-pink {
+    color: var(--pink);
+
+    &:hover {
+      box-shadow: 0 0 10px var(--pink),
+      0 0 30px var(--pink),
+      0 0 60px var(--pink),
+      0 0 100px var(--pink);
+
+      &::after {
+        background: var(--pink);
+      }
+    }
+
+    &::before {
+      background: var(--pink);
+    }
+  }
+
+  .btn-blue {
+    color: var(--blue);
+
+    &:hover {
+      box-shadow: 0 0 10px var(--blue),
+      0 0 30px var(--blue),
+      0 0 60px var(--blue),
+      0 0 100px var(--blue);
+
+      &::after {
+        background: var(--blue);
+      }
+    }
+
+    &::before {
+      background: var(--blue);
+    }
+  }
+
+  .btn-green {
+    color: var(--green);
+
+    &:hover {
+      box-shadow: 0 0 10px var(--green),
+      0 0 30px var(--green),
+      0 0 60px var(--green),
+      0 0 100px var(--green);
+
+      &::after {
+        background: var(--green);
+      }
+    }
+
+    &::before {
+      background: var(--green);
+    }
+  }
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.btn__text {
+  position: relative;
+  z-index: 1;
+  font-size: 24px;
+  color: #fff;
+  opacity: .5;
+  text-transform: uppercase;
+  transition: .5s;
+}
