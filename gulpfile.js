@@ -30,6 +30,7 @@ function browsersync() {
 
 function scripts() {
     return src([
+        'app/js/Box3D.js',
         'app/js/Photo.js',
         'app/js/app.js',
     ])

@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;400&display=swap');
+
+.card__container {
+  height: 100vh;
+  width: 100vw;
+  box-shadow: 0 0 50px #000;
+  position: relative;
+  z-index: 0;
+  transition: all 1s;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../img/dest/mountain3.webp') center center no-repeat no-repeat;
+    background-size: cover;
+    filter: grayscale(100%);
+    z-index: 10;
+  }
+}
+
+.card__wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 20;
+}
+
+.card__box {
+  width: 315px;
+  height: 440px;
+  display: block;
+  transform-style: preserve-3d;
+  transition: all 1s;
+  position: relative;
+  transform: perspective(1200px) rotateX(0) rotateY(0deg) rotateZ(0) translateZ(200px) translateY(0) translateX(0) scale(1);
+}
+
+.card {
+  display: inline-block;
+  box-sizing: border-box;
+  position: absolute;
+}
+
+.layerFace {
+  width: 315px;
+  height: 440px;
+  transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(0px) translateZ(0px) perspective(1200px);
+}
+
+.layerUp {
+  width: 315px;
+  height: 25px;
+  transform: rotateX(90deg) rotateY(0) rotateZ(0) translateX(0) translateY(-13px) translateZ(12px) perspective(1200px);
+  //background: rgba(255, 255, 255, 0.3);
+}
+
+.layerRight {
+  width: 25px;
+  height: 440px;
+  transform: rotateX(0) rotateY(90deg) rotateZ(0) translateX(13px) translateY(0px) translateZ(302px) perspective(1200px);
+  background: linear-gradient(transparent, #0BE8FC);
+}
+
+.layerDown {
+  width: 315px;
+  height: 25px;
+  transform: rotateX(90deg) rotateY(0) rotateZ(0) translateX(0) translateY(-13px) translateZ(-427px) perspective(1200px);
+  background: #0BE8FC;
+}
+
+.layerLeft {
+  width: 25px;
+  height: 440px;
+  transform: rotateX(0) rotateY(90deg) rotateZ(0) translateX(13px) translateY(0px) translateZ(-12px) perspective(1200px);
+  background: linear-gradient(transparent, #0BE8FC);
+}
+
+.layerFarWall {
+  width: 315px;
+  height: 440px;
+  transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(0px) translateZ(-25px) perspective(1200px);
+  box-shadow: -1px 1px 10px #000, -1px 1px 20px rgba(0, 0, 0, .35), -1px 1px 30px rgba(0, 0, 0, .93);
+  background: linear-gradient(transparent, #0BE8FC);
+  transition: all 1s;
+}
+
+.card__text {
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+  flex-direction: column;
+  box-sizing: border-box;
+
+  .card__smallText {
+    font-family: Oswald, sans-serif;
+    font-weight: 200;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: -8px;
+  }
+
+  .card__header {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    color: #fff;
+    margin-bottom: 100px;
+    text-transform: uppercase;
+  }
+
+  .card__subtitle {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 200;
+    font-size: 14px;
+    color: #fff;
+  }
+}
+
+.trees_left {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url(../img/dest/trees_left.webp) center center no-repeat no-repeat;
+  background-size: cover;
+  z-index: 30;
+  filter: grayscale(100%) blur(1px);
+  transform: translate(360px,-180px) scale(1.4);
+  transition: transform 1s;
+}
+
+.trees_right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url(../img/dest/trees_right.webp) center center no-repeat no-repeat;
+  background-size: cover;
+  z-index: 30;
+  filter: grayscale(100%) blur(1px);
+  transform: translate(-380px,-190px) scale(1.4);
+  transition: transform 1s;
+}

@@ -1,6 +1,17 @@
 window.addEventListener('load', () => {
 
-    // Анимация, - "Цветной зум"
+    let objCard3D = {
+        card: '.card__box', // Анимируемый блок
+        card__container: '.card__container', // Блок контейнер
+        layerFarWall: '.layerFarWall', // Задняя стеня с тенью
+        trees__left: '.trees_left', // Дерево слева
+        trees__right: '.trees_right', // Дерево справа
+        tiltAngle: 7, // угол отклонения в градусах
+        axialDisplacement: 40, // Смещение по оси Z || Каждый новый слой смещается на (i++ + 1) * axialDisplacement px
+    }
+    new Box3D(objCard3D);
+
+    // Анимация, - "Цвета жизни"
     let objGrayScale1 = {
         glass: '.glass-search1',
         block_parent: '.anim-photo1',
