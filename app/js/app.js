@@ -11,7 +11,7 @@ window.addEventListener('load', () => {
     }
     new Box3D(objCard3D);
 
-    // Анимация, - "Цвета жизни"
+    // Анимация, - "Цвета реальности"
     let objGrayScale1 = {
         glass: '.glass-search1',
         block_parent: '.anim-photo1',

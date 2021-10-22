@@ -31,12 +31,12 @@ class Box3D { /* Анимация, - "Ожившее фото" */
                 this.elementDirectionalShift(this.tiltAngle, -this.tiltAngle, -8, 10)
                 this.layerFarWall.style.boxShadow = `8px 5px 20px #000, 12px 10px 40px rgba(0,0,0, .35), 13px 15px 50px rgba(0, 0, 0, .93)`;
                 this.trees__left.style.transform = `translate(350px, -190px) scale(1.4)`
-                this.trees__right.style.transform = `translate(-390px,-200px) scale(1.4)`
+                this.trees__right.style.transform = `translate(-390px,-190px) scale(1.4)`
             } else if (x > 50 && y < 50) { // Правый верхний угол
                 this.elementDirectionalShift(this.tiltAngle, this.tiltAngle, -8, -10)
                 this.layerFarWall.style.boxShadow = `-8px 5px 20px #000, -12px 10px 40px rgba(0, 0, 0, .35), -13px 15px 50px rgba(0, 0, 0, .93)`;
                 this.trees__left.style.transform = `translate(370px, -190px) scale(1.4)`
-                this.trees__right.style.transform = `translate(-370px, -200px) scale(1.4)`
+                this.trees__right.style.transform = `translate(-370px, -190px) scale(1.4)`
             } else if (x < 50 && y > 50) { // Левый нижний угол
                 this.elementDirectionalShift(-this.tiltAngle, -this.tiltAngle, 8, -10)
                 this.layerFarWall.style.boxShadow = `8px -5px 20px #000, 12px -10px 40px rgba(0, 0, 0, .35), 13px -15px 50px rgba(0, 0, 0, .93)`;
